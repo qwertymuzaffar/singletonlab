@@ -37,6 +37,9 @@ public class OfficeTest {
             System.out.println("❌ Something went wrong - they have different managers!");
         }
 
+        System.out.println("\n📊 Printing Statistics:");
+        System.out.println("Total jobs printed today: " + aliceManager.getTotalJobsPrinted());
+
         System.out.println("\n🎯 Lab Complete! You've implemented the Singleton pattern!");
     }
 }

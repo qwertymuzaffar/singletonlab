@@ -9,6 +9,8 @@ public class PrinterManager {
     // Step 1: Keep the single instance here (like having one manager's desk)
     private static PrinterManager singleManager = null;
 
+    private int totalJobsPrinted = 0;
+
     // Step 2: Track printer status
     private boolean printerBusy = false;
     private String currentJob = "";
@@ -38,6 +40,9 @@ public class PrinterManager {
 
         System.out.println("🖨️ Printing: " + document + " for " + person);
 
+        totalJobsPrinted++;
+        System.out.println("📊 Job #" + totalJobsPrinted + " completed");
+
         // Simulate printing time
         try {
             Thread.sleep(2000); // 2 seconds
@@ -48,6 +53,10 @@ public class PrinterManager {
         System.out.println("✅ Finished printing: " + document);
         printerBusy = false;
         currentJob = "";
+    }
+
+    public int getTotalJobsPrinted() {
+        return totalJobsPrinted;
     }
 
     // Check printer status
